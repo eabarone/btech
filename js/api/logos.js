@@ -6,7 +6,7 @@
  * Falls back to Google Favicon (sz=128) if Clearbit fails.
  */
 export function getLogoUrl(domain) {
-  return `https://logo.clearbit.com/${domain}`;
+  return `https://logo.clearbit.com/${domain}?size=128`;
 }
 
 export function getFaviconUrl(domain) {
@@ -26,7 +26,7 @@ export function logoImg(domain, icon, color, size = '3rem') {
     <img
       src="${getLogoUrl(domain)}"
       alt="logo"
-      style="width:${size};height:${size};object-fit:contain;border-radius:8px;"
+      style="width:${size};height:${size};object-fit:contain;border-radius:8px;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges;"
       onerror="this.onerror=null;
                this.src='${getFaviconUrl(domain)}';
                this.onerror=function(){
