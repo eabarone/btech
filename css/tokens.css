@@ -1,0 +1,87 @@
+/* BTech Design Tokens — Manual de Identidad v1.0 */
+:root {
+  /* Colores Principales */
+  --color-blue-light: #528BC9;
+  --color-blue-dark:  #264362;
+  --color-green:      #87BF58;
+
+  /* Colores Secundarios */
+  --color-gray-light: #F5F5F5;
+  --color-gray-dark:  #333333;
+  --color-white:      #FFFFFF;
+
+  /* Aliases semánticos */
+  --color-primary:    var(--color-blue-dark);
+  --color-accent:     var(--color-blue-light);
+  --color-success:    var(--color-green);
+  --color-bg:         var(--color-white);
+  --color-surface:    var(--color-gray-light);
+  --color-text:       var(--color-gray-dark);
+  --color-text-inv:   var(--color-white);
+
+  /* Sombras modo oscuro (shared) */
+  --shadow-sm-dark: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md-dark: 0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg-dark: 0 8px 32px rgba(0,0,0,0.5);
+
+  /* Tipografía — Poppins */
+  --font-family:      'Poppins', sans-serif;
+  --font-size-title:  2.5rem;   /* ~40px */
+  --font-size-sub:    1.25rem;  /* ~20px */
+  --font-size-body:   0.875rem; /* ~14px */
+  --font-weight-bold:   700;
+  --font-weight-medium: 500;
+  --font-weight-reg:    400;
+
+  /* Espaciado */
+  --space-xs:  0.25rem;
+  --space-sm:  0.5rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Bordes */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 3px rgba(38, 67, 98, 0.08);
+  --shadow-md: 0 4px 16px rgba(38, 67, 98, 0.12);
+  --shadow-lg: 0 8px 32px rgba(38, 67, 98, 0.16);
+
+  /* Transiciones */
+  --transition: 0.2s ease;
+}
+
+/* ════════════════════════════════
+   DARK MODE TOKENS
+   Basado en la paleta BTech: azules profundos como base
+   ════════════════════════════════ */
+[data-theme="dark"] {
+  --color-bg:       #0f1923;
+  --color-surface:  #1a2736;
+  --color-primary:  #7ab3e0;
+  --color-accent:   #528BC9;
+  --color-text:     #e2eaf4;
+  --color-text-inv: #0f1923;
+  --color-white:    #ffffff;
+  --color-gray-light: #1e2f3f;
+  --color-gray-dark:  #e2eaf4;
+  --color-green:    #9fd468;
+  --color-section-dark-bg: #090f16;
+
+  --shadow-sm: var(--shadow-sm-dark);
+  --shadow-md: var(--shadow-md-dark);
+  --shadow-lg: var(--shadow-lg-dark);
+}
+
+/* Smooth theme transition — only color-related props, not transform/opacity to avoid breaking animations */
+body, .card, .navbar, .step, .value-card, .stats-bar, .tab-btn,
+.tag-filter__btn, .category-card, .video-card, .search-box,
+.tool-hero, .hero, .section--dark, .section--gray, footer {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
