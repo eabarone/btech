@@ -149,10 +149,14 @@ async function loadWikipedia(tool) {
   }
 
   content.innerHTML = `
-    <div style="display:grid;grid-template-columns:${data.imageUrl ? '1fr 300px' : '1fr'};gap:var(--space-xl);align-items:start;">
+    <div class="wiki-grid${data.imageUrl ? ' wiki-grid--has-img' : ''}">
       <div>
         <h2 style="font-size:var(--font-size-sub);font-weight:var(--font-weight-bold);color:var(--color-primary);margin-bottom:var(--space-md);">${data.title}</h2>
         <p style="font-size:1rem;line-height:1.75;color:var(--color-text);">${data.extract}</p>
+        ${data.imageUrl ? `
+          <img src="${data.imageUrl}" alt="${data.title}" class="wiki-img--mobile"
+            style="display:none;border-radius:var(--radius-md);box-shadow:var(--shadow-md);width:100%;margin-top:var(--space-lg);" />
+        ` : ''}
         ${data.pageUrl ? `
           <a href="${data.pageUrl}" target="_blank" rel="noopener" class="btn btn--outline" style="margin-top:var(--space-lg);">
             Leer más en Wikipedia →
@@ -160,9 +164,8 @@ async function loadWikipedia(tool) {
         ` : ''}
       </div>
       ${data.imageUrl ? `
-        <div>
-          <img src="${data.imageUrl}" alt="${data.title}" style="border-radius:var(--radius-md);box-shadow:var(--shadow-md);width:100%;" />
-        </div>
+        <img src="${data.imageUrl}" alt="${data.title}" class="wiki-img--desktop"
+          style="border-radius:var(--radius-md);box-shadow:var(--shadow-md);width:100%;" />
       ` : ''}
     </div>
   `;

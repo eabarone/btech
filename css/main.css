@@ -341,7 +341,7 @@ a { color: inherit; }
   gap: 0;
   border-bottom: 2px solid var(--color-gray-light);
   margin-bottom: var(--space-xl);
-  overflow-x: auto;
+  overflow-x: visible;
 }
 
 .tab-btn {
@@ -522,6 +522,18 @@ a { color: inherit; }
 
 .search-box button:hover { background: #76ad47; }
 
+/* ── Wikipedia Grid ── */
+.wiki-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.wiki-grid--has-img {
+  grid-template-columns: 1fr minmax(0, 280px);
+}
+
 /* ── About Page ── */
 .about-hero {
   background: linear-gradient(135deg, #264362, #1a3550);
@@ -603,6 +615,11 @@ a { color: inherit; }
   .section { padding: var(--space-xl) 0; }
   .container { padding: 0 var(--space-md); }
 
+  /* Wikipedia grid: stack on mobile, show mobile image (between text and button) */
+  .wiki-grid--has-img { grid-template-columns: 1fr; }
+  .wiki-img--mobile   { display: block !important; width: 100%; max-width: 240px; height: auto; margin: var(--space-md) auto; }
+  .wiki-img--desktop  { display: none !important; }
+
   /* Typography */
   .hero__title       { font-size: clamp(1.6rem, 6vw, 2.2rem); }
   .hero__desc        { font-size: 0.9rem; }
@@ -642,7 +659,7 @@ a { color: inherit; }
   .steps-list__progress { left: 15px; }
 
   /* Tabs */
-  .tabs { gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .tabs { gap: 0; }
   .tab-btn { padding: var(--space-sm) var(--space-md); font-size: 0.8rem; }
 
   /* Search */
