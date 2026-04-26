@@ -29,7 +29,7 @@ export function renderHome() {
         </div>
         <div class="hero__visual">
           <div class="hero__logo-big">
-            <i data-lucide="monitor-smartphone" style="width:7rem;height:7rem;color:rgba(255,255,255,0.9);"></i>
+            <img src="img/logo.PNG" alt="BTech" class="hero__logo-img" />
           </div>
         </div>
       </div>

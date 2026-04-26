@@ -7,10 +7,7 @@ export function renderNavbar() {
   navbar.innerHTML = `
     <nav class="navbar">
       <a class="navbar__logo" href="#/" data-link>
-        <div>
-          <span class="navbar__logo-text">B<span>Tech</span></span>
-          <span class="navbar__tagline">Aprender, conectar y trasformar</span>
-        </div>
+        <img src="img/logo-mini.png" alt="BTech" class="navbar__logo-img" />
       </a>
 
       <ul class="navbar__links" id="nav-links">

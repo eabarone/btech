@@ -144,15 +144,24 @@ a { color: inherit; }
 }
 
 .hero__logo-big {
-  width: 240px;
-  height: 240px;
-  background: rgba(255,255,255,0.06);
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 8rem;
   animation: float 4s ease-in-out infinite;
+  padding: 0;
+}
+
+.hero__logo-img {
+  width: 260px;
+  height: 260px;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: var(--space-lg);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
 }
 
 @keyframes float {
@@ -363,7 +372,7 @@ a { color: inherit; }
 .step {
   display: flex;
   gap: var(--space-lg);
-  background: var(--color-bg);
+  background: var(--color-surface);
   border-radius: var(--radius-md);
   padding: var(--space-lg);
   box-shadow: var(--shadow-sm);
@@ -482,7 +491,7 @@ a { color: inherit; }
   display: flex;
   max-width: 600px;
   margin: 0 auto;
-  background: var(--color-bg);
+  background: var(--color-surface);
   border-radius: var(--radius-full);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
