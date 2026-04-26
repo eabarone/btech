@@ -2,6 +2,7 @@
 import { CATEGORIES, TOOLS } from '../data/tools.js';
 import { navigate } from '../router.js';
 import { logoImg } from '../api/logos.js';
+import { assetUrl } from '../utils/paths.js';
 
 export function renderHome() {
   const view = document.getElementById('view');
@@ -29,7 +30,7 @@ export function renderHome() {
         </div>
         <div class="hero__visual">
           <div class="hero__logo-big">
-            <img src="img/logo.PNG" alt="BTech" class="hero__logo-img" />
+            <img src="${assetUrl('img/logo.PNG')}" alt="BTech" class="hero__logo-img" />
           </div>
         </div>
       </div>

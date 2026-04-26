@@ -1,13 +1,14 @@
 /* BTech — Navbar Component */
 import { navigate } from '../router.js';
 import { initThemeToggle } from '../theme.js';
+import { assetUrl } from '../utils/paths.js';
 
 export function renderNavbar() {
   const navbar = document.getElementById('navbar');
   navbar.innerHTML = `
     <nav class="navbar">
       <a class="navbar__logo" href="#/" data-link>
-        <img src="img/logo-mini.png" alt="BTech" class="navbar__logo-img" />
+        <img src="${assetUrl('img/logo-mini.png')}" alt="BTech" class="navbar__logo-img" />
       </a>
 
       <ul class="navbar__links" id="nav-links">
