@@ -30,7 +30,7 @@ export function renderHome() {
         </div>
         <div class="hero__visual">
           <div class="hero__logo-big">
-            <img src="${assetUrl('img/logo.PNG')}" alt="BTech" class="hero__logo-img" />
+            <img src="${assetUrl('img/logo.png')}" alt="BTech" class="hero__logo-img" />
           </div>
         </div>
       </div>
