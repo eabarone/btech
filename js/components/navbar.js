@@ -2,6 +2,7 @@
 import { navigate } from '../router.js';
 import { initThemeToggle } from '../theme.js';
 import { assetUrl } from '../utils/paths.js';
+import { initTour, startTour } from '../tour.js';
 
 export function renderNavbar() {
   const navbar = document.getElementById('navbar');
@@ -24,6 +25,11 @@ export function renderNavbar() {
           <i data-lucide="search" style="width:16px;height:16px;"></i>
         </button>
       </div>
+
+      <button class="navbar__tour-btn" id="tour-start-btn" aria-label="Iniciar charla guiada">
+        <i data-lucide="presentation" style="width:14px;height:14px;"></i>
+        <span>Iniciar charla</span>
+      </button>
 
       <button class="navbar__theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
         <i data-lucide="moon" style="width:18px;height:18px;" id="theme-icon"></i>
@@ -60,6 +66,9 @@ function setupNavbarEvents() {
   });
 
   initThemeToggle();
+  initTour();
+
+  document.getElementById('tour-start-btn')?.addEventListener('click', startTour);
 
   document.querySelectorAll('[data-link]').forEach(a => {
     a.addEventListener('click', e => {
